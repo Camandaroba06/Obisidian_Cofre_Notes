@@ -11,17 +11,28 @@
             "id": "154b33b88233fc8a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "1.Mestrado/1.1.Disciplinas/1.1.1.PAA/1.1.1.2.Problema_Stable_Matching/Introduction - Stable Matching.md",
-                "mode": "source",
-                "source": false
+                "path": "1.Mestrado"
               },
               "icon": "lucide-file",
-              "title": "Introduction - Stable Matching"
+              "title": "1.Mestrado"
+            }
+          },
+          {
+            "id": "ec9814f70d42f0ac",
+            "type": "leaf",
+            "state": {
+              "type": "mk-space",
+              "state": {
+                "path": "1.Mestrado"
+              },
+              "icon": "lucide-file",
+              "title": "1.Mestrado"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -75,16 +86,13 @@
             }
           },
           {
-            "id": "93455c0662d6a3d6",
+            "id": "0417bf7dd7ad224d",
             "type": "leaf",
             "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "Explorador de arquivos"
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Navigator"
             }
           }
         ],
@@ -209,10 +217,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "154b33b88233fc8a",
+  "active": "ec9814f70d42f0ac",
   "lastOpenFiles": [
-    "10. Imagens/Pasted image 20260328161048.png",
     "1.Mestrado/1.1.Disciplinas/1.1.1.PAA/1.1.1.2.Problema_Stable_Matching/Introduction - Stable Matching.md",
+    "10. Imagens/Pasted image 20260328161048.png",
     "10. Imagens/10.Imagens.md",
     "Vault.md",
     "10. Imagens",

@@ -40,11 +40,11 @@
   "expandedSpaces": [
     "/",
     "//1.Mestrado/1.Mestrado/1.1.Disciplinas",
-    "//Tags",
     "//1.Mestrado/1.Mestrado/1.1.Disciplinas/1.Mestrado/1.1.Disciplinas/1.1.1.PAA",
     "//1.Mestrado/1.Mestrado/1.1.Disciplinas/1.Mestrado/1.1.Disciplinas/1.1.1.PAA/1.Mestrado/1.1.Disciplinas/1.1.1.PAA/1.1.1.2.Problema_Stable_Matching",
     "//1.Mestrado",
-    "//10. Imagens"
+    "//10. Imagens",
+    "//Tags"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
