@@ -11,28 +11,17 @@
             "id": "154b33b88233fc8a",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "1.Mestrado"
+                "file": "1.Mestrado/1.1.Disciplinas/1.1.1.PAA/1.1.1.2.Problema_Stable_Matching/Introduction - Stable Matching.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "1.Mestrado"
-            }
-          },
-          {
-            "id": "ec9814f70d42f0ac",
-            "type": "leaf",
-            "state": {
-              "type": "mk-space",
-              "state": {
-                "path": "1.Mestrado"
-              },
-              "icon": "lucide-file",
-              "title": "1.Mestrado"
+              "title": "Introduction - Stable Matching"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -217,8 +206,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ec9814f70d42f0ac",
+  "active": "154b33b88233fc8a",
   "lastOpenFiles": [
+    "1.Mestrado/1.1.Disciplinas/1.1.Disciplinas.md",
+    "1.Mestrado/1.Mestrado.md",
+    "Excalidraw/Drawing 2026-03-28 20.39.39.excalidraw.md",
+    "Pasted Image 20260328204011_890.png",
+    "Excalidraw",
+    "Tags/Tags.md",
     "1.Mestrado/1.1.Disciplinas/1.1.1.PAA/1.1.1.2.Problema_Stable_Matching/Introduction - Stable Matching.md",
     "10. Imagens/Pasted image 20260328161048.png",
     "10. Imagens/10.Imagens.md",
