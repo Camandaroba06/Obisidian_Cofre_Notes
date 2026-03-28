@@ -75,7 +75,7 @@
             }
           },
           {
-            "id": "3a827e4a040152fc",
+            "id": "93455c0662d6a3d6",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -187,7 +187,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -206,7 +206,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bcee131ea756eb0a",
+  "active": "154b33b88233fc8a",
   "lastOpenFiles": [
     "10. Imagens/Pasted image 20260328161048.png",
     "1.Mestrado/1.1.Disciplinas/1.1.1.PAA/1.1.1.2.Problema_Stable_Matching/Introduction - Stable Matching.md",
