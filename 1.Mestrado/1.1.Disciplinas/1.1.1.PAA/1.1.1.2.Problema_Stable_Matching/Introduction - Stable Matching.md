@@ -114,4 +114,6 @@ Endwhile
 Return the set S of engaged pairs
 ```
 
-Embora o G-S algorithm seja fácil de afirmar/entender, ele não é obvio de visualizar que devolve um Stable Matching, ou um **Stable Matching perfeito**. Nós seguiremos a provar isso agora, através de uma sequência de fatos intermediários.
+Embora o G-S algorithm seja fácil de afirmar/entender, ele não é obvio de visualizar que devolve um Stable Matching, ou um **Stable Matching perfeito**. Nós seguiremos a provar isso agora, através de uma sequência de fatos intermediários. 
+
+---
