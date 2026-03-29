@@ -41,7 +41,7 @@ Então, considere um conjunto *M* = $\{m_1,m_2,...,m_n\}$ de $n$ homens, e um co
 Cada homem $m \in M$ rankeia todas as mulheres; Aqui diremos que cada $m$ prefere $w$ do que $w'$ se $m$ rankear $w$ mais alto do que $w'$. O nome que daremos a esse ranking será **Lista de Preferências**. Não ha empate no ranking. Cada mulher, analogamente, rankeia os homi tbm.
 
 Dado um casamento perfeito S' (o livro volta a chamar de S por algum motivo, ent vo usar S), o que pode dar de errado ? Seguindo a motivação inicial em termos de empregados e aplicantes, nós deveríamos nos preocupar com a seguinte situação: Há dois pares $(m,w)$ e $(m',w')$ em S (Figura 1.1) com a propriedade de que $m$ prefere $w'$ do que seu atual parceiro $w$; e $w'$ prefere $m$ do que seu atual parceiro $m'$. Nesse caso, não há nada que impeça $m$ e $w'$ de abandonarem seus parceiros atuais e casarem juntos, ai entra aquela ideia lá do começo de esse trem não ser "self-enforcing". Nós vamos dizer que esse par $(m,w')$ é uma **INSTABILIDADE** com respeito a S: $(m,w')$ não estão presentes em S, massss cada um deles $m$ e $w'$ prefere um ao outro do que seus atuais parceiros em S, oq ameaça a integralidade de S como estrutura de casamento perfeito.
-
+<center><p align="left"><center></center></p></center>
 ![[Pasted image 20260328161048.png]]
 
 Com tudo isso que foi dito aqui, o objetivo principal é gerar um conjunto de casamentos SEM INSTABILIDADES. Nós vamos dizer que S é **estável** se (i) é perfeito, e (ii) não há instabilidades com respeito a S.
@@ -117,3 +117,27 @@ Return the set S of engaged pairs
 Embora o G-S algorithm seja fácil de afirmar/entender, ele não é obvio de visualizar que devolve um Stable Matching, ou um **Stable Matching perfeito**. Nós seguiremos a provar isso agora, através de uma sequência de fatos intermediários. 
 
 ---
+
+
+### Analisando o Algoritmo
+
+Primeiro considere a perspectiva da mulher $w$ durante a execução do algoritmo. Para um $while$, ninguém propôs para ela ainda, e ela está solteira. Então, um homem $m$ talvez proponha para ela, e ela torne-se noiva. Com o passar do tempo, ela deve receber propostas adicionais, aceitando aquelas que subirem no ranking de seus parceiros. Então, descobrimos:
+
+==1.1) $w$ continua noiva do momento em que recebe a sua primeira proposta, e a sequência de parceiros os quais ela está noiva torna-se melhor e melhor. (subindo na lista de preferências).==
+
+Pela perspectiva do homem $m$ durante a execução do algoritmo é diferente. Ele é solteiro até que ele proponha para a de maior ranking na lista; Neste momento ele pode ou não se tornar noivo. Com o passar do tempo, ele talvez alterne entre solteiro e noivo; de qualquer forma a seguinte propriedade acontece:
+
+==1.2) A sequência de mulheres que $m$ propõe vai se tornando pior e pior (descendo na lista de preferências).==
+
+Agora, mostraremos que o algoritmo termina, e fornece um número de iterações limitadas necessária para terminar.
+
+==1.3) O G-S algorithm termina depois de no máximo $n^2$ iterações do $While$ loop.==
+
+Proof.
+
+Uma estratégia útil para limitação-superior do tempo de execução de um algoritmo como nós estamos tentando fazer aqui, é encontrar uma medida de **Medida de Progresso**. Nomeadamente, nós vemos algum caminho preciso de dizer que aquele passo tomado pelo algoritmo leva ele mais próximo da terminação.
+
+Nesse caso do presente algoritmo, cada interação consiste em algum homem propondo (apenas uma vez) para uma mulher que ele nunca propôs antes. Então, se supormos *P(t)* denotado pelo conjunto de pares $(m,w)$ como o $m$ propôs para $w$ no fim da iteração t, nós vemos que para todo t, o tamanho de *P(t+1)* é estritamente maior que o tamanho de *P(t)*. mas há apenas $n^2$ possíveis pares de homens como mulheres ao todo, então o valor de *P(.)* pode crescer até no máximo $n^2$ vezes ao longo do algoritmo. Isso permite que hajam apenas no máximo $n²$ iterações.
+
+Dois pontos valem a pena serem notados sobre esse fato anterior e a proof. Primeiro, haverão algumas execuções do algoritmo (com certas listas de preferências) que podem envolver algum número próximo de $n^2$ iterações, então essa análise não está tão longe da melhor possível. Segundo, existem alguns quantificadores que podem não funcionar tão bem para **Medida de Progresso** para o algoritmo, uma vez que eles podem não necessariamente crescer a cada iteração. Por exemplo, o número de indivíduos solteiros pode permanecer constante (pode surgir um novo noivado com a desfeita de um ja existente, com isso temos o número de solteiros mantido constante, por isso não é um bom quantificador/quantitativo) de uma iteração para outra, assim como o número de pares noivos (mesma ideia, um novo par de noivos pode surgir com a desfeita de outro par, logo o número de pares noivos permanece constante). Dessa forma, esses quantitativos podem não servir para serem usando diretamente para fornecer um limie superior de máximo de iterações possíveis, no mesmo estilo do parágrafo anterior.
+
