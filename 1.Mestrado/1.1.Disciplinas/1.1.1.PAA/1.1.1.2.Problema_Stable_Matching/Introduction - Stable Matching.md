@@ -141,3 +141,119 @@ Nesse caso do presente algoritmo, cada interação consiste em algum homem propo
 
 Dois pontos valem a pena serem notados sobre esse fato anterior e a proof. Primeiro, haverão algumas execuções do algoritmo (com certas listas de preferências) que podem envolver algum número próximo de $n^2$ iterações, então essa análise não está tão longe da melhor possível. Segundo, existem alguns quantificadores que podem não funcionar tão bem para **Medida de Progresso** para o algoritmo, uma vez que eles podem não necessariamente crescer a cada iteração. Por exemplo, o número de indivíduos solteiros pode permanecer constante (pode surgir um novo noivado com a desfeita de um já existente, com isso temos o número de solteiros mantido constante, por isso não é um bom quantificador/quantitativo) de uma iteração para outra, assim como o número de pares noivos (mesma ideia, um novo par de noivos pode surgir com a desfeita de outro par, logo o número de pares noivos permanece constante). Dessa forma, esses quantitativos podem não servir para serem usando diretamente para fornecer um limite superior de máximo de iterações possíveis, no mesmo estilo do parágrafo anterior.
 
+---
+
+Vamos agora estabelecer que o conjunto S retornado no final do algoritmo é de fato um Matching Perfeito. Pq isso não é imediatamente óbivio ? Essencialmente, nós temos que mostrar que nenhum homem pode "cair fora" do fim da sua lista de preferências; o único jeito do *While*
+loop parar é não existirem mais homens solteiros. Nesse caso, o conjunto de casais noivos irá compor um Matching perfeito.
+
+Então a principal coisa que precisamos mostrar é:
+
+==1.4) Se m é solteiro em algum momento da execução do algoritmo, então existe alguma mulher (não necessariamente solteira) que ele ainda não propôs...==
+
+Proof.
+
+Suponha que em algum dado momento da execução $m$ já propôs para todas as mulheres existentes em sua lista de preferência e ele continua solteiro. Então, por (1.1), cada $n$ mulher já TEM um homem e recusaram o $m$, mantendo-se com seus atuais parceiros. Mas só existem $n$ homens para essas $n$ mulheres e mesmo assim $m$ continua solteiro, então isso forma uma contradição.
+
+==(==1.5) O conjunto S retornado no final do algoritmo é **SEMPRE um Matching Perfeito**.==
+
+Proof.
+
+O conjunto de pares noivos sempre forma um Matching. Suponha que o algoritmo termina com um homem solteiro $m$. Se o algoritmo chegou ao final só pode significar das duas uma: ou $m$ já propôs para todas as $n$ mulheres e mesmo assim continuou solteiro, ou o *While* loop não terminou. Ambas opções são contradições, uma vez que por (1.4) diz que não é possível ficar solteiro o $m$ e (1.3) que o algoritmo termina, logo o *While* loop deve acabar.
+
+Finalmente,  provaremos o principal ponto do G-S:
+
+==(1.6) Considere uma execução de G-S algorithm que retorna um conjunto de pares S. O conjunto S **é SEMPRE um Stable Matching**.==
+
+Proof.
+
+Como já foi provado em (1.5), S é sempre um Matching Perfeito. Então, para provar que S é um Stable Matching, vamos assumir que exista uma instabilidade com respeito a S e obter uma contradição. Como definidor mais cedo, um instabilidade envolvendo dois pares $(m,w)$ e $(m',w')$, em S terá as seguintes propriedades:
+
+- $m$ prefere $w'$ do que $w$.
+- $w'$ prefere $m$ do que $m'$.
+
+Então, se $m$ prefere $w'$ do que $w$, mas o final do algoritmo retornou $(m,w)$ só pode significar que na lista de preferências de $m$ ele propôs para $w'$, mas $w'$ rejeitou (contradiz as características que partimos para a prova de contradição) e ai propôs para $w$. Outra possibilidade que pensei seria o $m$ não ter proposto para $w'$, mas se terminou casado com $w$, $w$ veio primeiro na lista de preferências (contradição das características que partimos para a prova).
+
+Por outro lado, se $(m',w')$ foi retornado no fim do algoritmo pode significar que $m'$ propôs para $w'$ primeiro do que $m$, mas ao longo do algoritmo $m$ acabaria eventualmente propondo para $w'$ devido a ser a de maior preferência para ele. Como a saída não foi $(m,w')$, significaria que $w'$ rejeitou $m$ o que por (1.1) com as premissas dessa prova por contradição resultaria numa contradição, uma vez que se $w'$ prefere $m$ do que $m'$ por (1.1) vimos que as mulheres sempre melhoram de parceiros, então ela deveria ter aceitado a proposta de $m$ (contradição).
+
+---
+
+### Extensões
+
+Vamos começar definindo uma noção de Stable Matching; Nós só provamos que G-S algorithm constroi um Stable Matching. Nós vamos agora considerar algumas questões a mais sobre o comportamento do G-S algorithm e a relação de suas propriedades de diferentes Stable Matching.
+
+
+Para começar, nosso exemplo reforça a ideia de que o algoritmo G-S
+é, na verdade, subespecificado: contanto que haja um homem livre, podemos
+escolher qualquer homem livre para fazer a próxima proposta. Escolhas diferentes especificam
+execuções diferentes do algoritmo; é por isso que, para sermos cuidadosos, enunciamos (1.6)
+como “Considere uma execução do algoritmo G-S que retorna um conjunto de pares S,”
+em vez de “Considere o conjunto S retornado pelo algoritmo G-S”.
+
+Assim, nos deparamos com outra questão muito natural: Todas as execuções do
+algoritmo G-S produzem o mesmo emparelhamento? Este é um tipo de questão que
+surge em muitos contextos na ciência da computação: temos um algoritmo que é executado
+assincronamente, com diferentes componentes independentes realizando ações
+que podem ser intercaladas de maneiras complexas, e queremos saber quanta
+variabilidade essa assincronia causa no resultado final. Para considerar um exemplo muito
+diferente, os componentes independentes podem não ser homens e
+mulheres, mas componentes eletrônicos ativando partes da asa de um avião; O efeito da assincronia em seu comportamento pode ser muito significativo.
+
+No presente contexto, veremos que a resposta à nossa pergunta é surpreendentemente clara: todas as execuções do algoritmo G-S produzem o mesmo emparelhamento.
+
+Vamos agora provar isso.
+
+Todas as Execuções Produzem o Mesmo Emparelhamento. Existem várias maneiras possíveis de provar uma afirmação como esta, muitas das quais resultariam em argumentos bastante complicados. Acontece que a abordagem mais fácil e informativa para nós será caracterizar exclusivamente o emparelhamento obtido e, em seguida, mostrar que todas as execuções resultam no emparelhamento com essa caracterização.
+
+Qual é a caracterização? Mostraremos que cada homem termina com a "melhor parceira possível" em um sentido concreto. (Lembre-se de que isso é verdade se todos os homens preferirem mulheres diferentes.) Primeiro, diremos que uma mulher w é uma parceira válida de um homem m se houver um emparelhamento estável que contenha o par (m, w). Diremos que w é o melhor parceiro válido de m se w for um parceiro válido de m e nenhuma mulher que m classifique acima de w for uma parceira válida dele. Usaremos best(m) para denotar o melhor parceiro válido de m.
+
+Agora, seja S∗ o conjunto de pares {(m,best(m)) :m ∈ M}. Provaremos o seguinte fato.
+
+(1.7) Toda execução de G-S algorithm resulta no conjunto S*
+
+
+Essa afirmação é surpreendente em vários níveis. Em primeiro lugar, conforme definida,
+não há razão para acreditar que S∗ seja um emparelhamento, muito menos um emparelhamento estável.
+Afinal, por que não poderia acontecer de dois homens terem o mesmo melhor parceiro válido?
+Em segundo lugar, o resultado mostra que o algoritmo G-S fornece o melhor resultado possível para cada homem simultaneamente; não há nenhum emparelhamento estável em que qualquer um dos homens pudesse ter esperado um resultado melhor.
+E, finalmente, responde à nossa pergunta anterior, mostrando que a ordem das propostas no algoritmo G-S não tem absolutamente nenhum efeito sobre o resultado final.
+
+
+
+Apesar de tudo isso, a demonstração não é tão difícil.
+Demonstração. Suponhamos, por contradição, que alguma execução E do
+algoritmo G-S resulte em um emparelhamento S no qual algum homem é emparelhado com uma
+mulher que não é sua melhor parceira válida. Como os homens propõem em ordem decrescente
+de preferência, isso significa que algum homem é rejeitado por uma parceira válida
+durante a execução E do algoritmo. Considere, então, o primeiro momento durante
+a execução E no qual algum homem, digamos m, é rejeitado por uma parceira válida w.
+
+Novamente, como os homens propõem em ordem decrescente de preferência, e como esta é
+a primeira vez que tal rejeição ocorreu, deve ser que w seja a melhor parceira válida de m,
+best(m).
+
+A rejeição de m por w pode ter ocorrido porque m propôs
+e foi rejeitado em favor do compromisso existente de w, ou porque w rompeu
+seu compromisso com m em favor de uma proposta melhor. De qualquer forma, neste
+momento w forma ou continua um compromisso com um homem m que ela prefere
+a m.
+Como w é um parceiro válido de m, existe um emparelhamento estável S contendo
+o par (m,w). Agora perguntamos: Quem está emparelhado neste emparelhamento? Suponha
+que seja uma mulher w=w.
+Como a rejeição de m por w foi a primeira rejeição de um homem por um parceiro válido
+na execução E, deve ser que m não tenha sido rejeitado por nenhum parceiro válido
+no ponto em E em que ficou noivo de w. Como ele propôs em
+ordem decrescente de preferência, e como w é claramente um parceiro válido de m,
+deve ser que m prefira w a w. Mas já vimos que w prefere m
+a m, pois na execução E ela rejeitou m em favor de m. Como (m,w)∈S,
+segue-se que (m, w) é uma instabilidade em S.
+Isso contradiz nossa afirmação de que S é estável e, portanto, contradiz nossa suposição inicial
+
+
+
+
+
+
+
+
+
+Um homem ou uma mulher pode se beneficiar mentindo sobre suas preferências? Mais concretamente, suponhamos que cada participante tenha uma ordem de preferências verdadeira. Agora, considere uma mulher w. Suponha que w prefira o homem m a m', mas ambos m e m' estejam abaixo em sua lista de preferências. Pode ser o caso de que, ao inverter a ordem de m e m' em sua lista de preferências (ou seja, ao afirmar falsamente que prefere m' a m) e executar o algoritmo com essa lista de preferências falsa, w acabará com um homem m'' que ela realmente prefere a ambos m e m'? (Podemos fazer a mesma pergunta para os homens, mas nos concentraremos no caso das mulheres para os propósitos desta questão.)

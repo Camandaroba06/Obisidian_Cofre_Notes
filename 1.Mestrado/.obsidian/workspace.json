@@ -13,15 +13,54 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1.1.Disciplinas/1.1.1.PAA/1.1.1.1.Pre_PAA/Demonstração por Indução Forte ou Completa.md",
+                "file": "1.Mestrado.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Demonstração por Indução Forte ou Completa"
+              "title": "1.Mestrado"
+            }
+          },
+          {
+            "id": "5e0d8396b43bfdbb",
+            "type": "leaf",
+            "state": {
+              "type": "mk-uri-view",
+              "state": {
+                "path": "https://www.make.md/static/latest.md"
+              },
+              "icon": "lucide-file",
+              "title": "https://www.make.md/static/latest.md"
+            }
+          },
+          {
+            "id": "d3b1b6a0ade1072b",
+            "type": "leaf",
+            "state": {
+              "type": "mk-space",
+              "state": {
+                "path": "Excalidraw"
+              },
+              "icon": "lucide-file",
+              "title": "Excalidraw"
+            }
+          },
+          {
+            "id": "f202d2b6bcece2f6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1.1.Disciplinas/1.1.1.PAA/1.1.1.3.Basics of Algorithm Analysis/Computational Tractability.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Computational Tractability"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -73,8 +112,19 @@
               "icon": "lucide-bookmark",
               "title": "Marcadores"
             }
+          },
+          {
+            "id": "df4b8105c616558b",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Navigator"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -180,11 +230,26 @@
       "daily-notes:Abrir a nota de hoje": false,
       "templates:Inserir modelo": false,
       "command-palette:Abrir paleta de comandos": false,
-      "bases:Criar nova base": false
+      "bases:Criar nova base": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "35a649b434530f15",
+  "active": "f202d2b6bcece2f6",
   "lastOpenFiles": [
+    "1.1.Disciplinas/1.1.1.PAA/1.1.1.3.Basics of Algorithm Analysis/Computational Tractability.md",
+    "1.1.Disciplinas/1.1.1.PAA/1.1.1.3.Basics of Algorithm Analysis/1.1.1.3.Basics of Algorithm Analysis.md",
+    "1.1.Disciplinas/1.1.1.PAA/1.1.1.3.Basics of Algorithm Analysis",
+    "1.1.Disciplinas/1.1.1.PAA/1.1.1.2.Problema_Stable_Matching/Introduction - Stable Matching.md",
+    "Sem título.base",
+    "1.1.Disciplinas/1.1.1.PAA/1.1.1.1.Pre_PAA/1.1.1.3.Basics of Algorithm Analysis/1.1.1.3.Basics of Algorithm Analysis.md",
+    "1.1.Disciplinas/1.1.1.PAA/1.1.1.1.Pre_PAA/1.1.1.3.Basics of Algorithm Analysis",
+    "Excalidraw/Vídeo 1 G-S algorithm.md",
+    "Excalidraw/Drawing 2026-03-29 17.33.09.excalidraw.md",
+    "Excalidraw/Untitled.md",
+    "Excalidraw",
+    "1.1.Disciplinas/1.1.Disciplinas.md",
+    "1.Mestrado.md",
+    "Tags",
     "1.1.Disciplinas/1.1.1.PAA/1.1.1.1.Pre_PAA/Demonstração por Indução fraca ou incompleta.md",
     "1.1.Disciplinas/1.1.1.PAA/1.1.1.1.Pre_PAA/Demonstração por Indução Forte ou Completa.md"
   ]
